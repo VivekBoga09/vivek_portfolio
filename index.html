@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boga Vivek | Full-Stack Developer & Data Science Undergrad | Portfolio</title>
+  <meta name="description" content="Portfolio of Boga Vivek - Computer Science & Engineering (Data Science) undergraduate at VNR VJIET. Full-Stack Developer (MERN Stack), Competitive Programmer (LeetCode 1635, 370+ DSA Solved), and Automation Engineer.">
+  <meta name="keywords" content="Boga Vivek, Portfolio, Full-Stack Developer, MERN Stack, React.js, Node.js, VNR VJIET, Data Science, LeetCode, Hyderabad Developer">
+  <meta name="author" content="Boga Vivek">
+  <meta property="og:title" content="Boga Vivek | Software Developer Portfolio">
+  <meta property="og:description" content="Explore projects, skills, competitive programming stats, and experience of Boga Vivek.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+  <!-- Background Interactive Particles & Ambient Glow Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Audio feedback helper toast (if triggered) -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Custom Cursor Glow -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="brand-logo" aria-label="Boga Vivek Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Boga Vivek</span>
+        <span class="logo-bracket">/&gt;</span>
+        <span class="status-indicator" title="Available for Internships"></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#competitive" class="nav-link">CP & DSA</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Controls -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="control-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <!-- Sound FX Toggle -->
+        <button id="sound-toggle" class="control-btn" title="Toggle UI Audio Effects" aria-label="Toggle UI Audio Effects">
+          <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button id="open-resume-btn" class="btn btn-sm btn-outline resume-trigger" aria-label="View Resume">
+          <i class="fa-solid fa-file-pdf"></i> Resume
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="logo-name">&lt;Boga Vivek /&gt;</span>
+      <button id="close-drawer-btn" class="close-drawer-btn" aria-label="Close Navigation Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+      <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+      <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
+      <li><a href="#competitive" class="mobile-link"><i class="fa-solid fa-trophy"></i> Competitive Coding</a></li>
+      <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> Education & Certs</a></li>
+      <li><a href="#terminal-section" class="mobile-link"><i class="fa-solid fa-terminal"></i> Terminal Playground</a></li>
+      <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-paper-plane"></i> Contact Me</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button id="mobile-resume-btn" class="btn btn-primary btn-block">
+        <i class="fa-solid fa-file-lines"></i> View Interactive Resume
+      </button>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Live Status Badge -->
+          <div class="hero-badge animate-fade-in">
+            <span class="pulse-dot"></span>
+            <span>Available for Software Engineering Internships</span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="hero-title animate-fade-up">
+            Hi, I'm <span class="gradient-text">Boga Vivek</span>
+          </h1>
+
+          <!-- Dynamic Typing Headline -->
+          <div class="hero-typing-wrapper">
+            <span class="typing-prefix">I build </span>
+            <span class="typing-text" id="typing-text">Full-Stack Web Applications</span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <!-- Hero Summary -->
+          <p class="hero-desc animate-fade-up delay-1">
+            Computer Science & Engineering (Data Science) undergraduate at 
+            <strong>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</strong> (CGPA: <strong>9.55 / 10</strong>).
+            Passionate full-stack developer adept in <strong>React.js, Node.js, Express.js, MongoDB</strong>, browser automation, and high-performance algorithms.
+          </p>
+
+          <!-- Quick Metrics Grid -->
+          <div class="hero-metrics animate-fade-up delay-2">
+            <div class="metric-chip">
+              <i class="fa-solid fa-graduation-cap metric-icon"></i>
+              <div class="metric-info">
+                <span class="metric-val" data-counter="9.55">9.55</span><span class="metric-unit">/10</span>
+                <span class="metric-label">CGPA @ VNR VJIET</span>
+              </div>
+            </div>
+            <div class="metric-chip">
+              <i class="fa-solid fa-code-compare metric-icon"></i>
+              <div class="metric-info">
+                <span class="metric-val" data-counter="370">370</span><span class="metric-unit">+</span>
+                <span class="metric-label">DSA Solved (LC & CC)</span>
+              </div>
+            </div>
+            <div class="metric-chip">
+              <i class="fa-solid fa-star metric-icon"></i>
+              <div class="metric-info">
+                <span class="metric-val" data-counter="1635">1635</span>
+                <span class="metric-label">LeetCode Max Rating</span>
+              </div>
+            </div>
+            <div class="metric-chip">
+              <i class="fa-brands fa-react metric-icon"></i>
+              <div class="metric-info">
+                <span class="metric-val">MERN</span>
+                <span class="metric-label">Full-Stack Specialization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="hero-ctas animate-fade-up delay-3">
+            <a href="#projects" class="btn btn-primary hero-btn">
+              <span>Explore Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button id="hero-resume-btn" class="btn btn-secondary hero-btn resume-trigger">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>View Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-outline hero-btn">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Socials & Quick Links -->
+          <div class="hero-socials animate-fade-up delay-4">
+            <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile" title="GitHub: VivekBoga09">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/vivekboga" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile" title="LinkedIn: vivekboga">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://leetcode.com/u/vivekboga2006/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LeetCode Profile" title="LeetCode Profile">
+              <i class="fa-solid fa-code"></i>
+            </a>
+            <a href="mailto:vivekboga2006@gmail.com" class="social-icon" aria-label="Email Boga Vivek" title="Email: vivekboga2006@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+918121714172" class="social-icon" aria-label="Call Boga Vivek" title="Phone: +91-8121714172">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero 3D Card / Avatar with Interactive Tilt -->
+        <div class="hero-visual animate-scale-in">
+          <div class="avatar-card-wrapper" id="avatar-card-wrapper">
+            <!-- Toggle Bar positioned ON TOP of Photo -->
+            <div class="photo-mode-toggle-top" id="photo-mode-toggle-top">
+              <button type="button" class="photo-switch-btn active" id="photo-switch-real" title="Switch to Real Portrait">
+                <i class="fa-solid fa-camera"></i> Real Photo
+              </button>
+              <button type="button" class="photo-switch-btn" id="photo-switch-avatar" title="Switch to 3D Rendered Avatar">
+                <i class="fa-solid fa-cube"></i> 3D Avatar
+              </button>
+            </div>
+
+            <div class="avatar-card" id="avatar-card">
+              <div class="avatar-glow-ring"></div>
+              <div class="avatar-image-container">
+                <img src="assets/images/linkedin_photo.jpg" alt="Boga Vivek - Software Engineer" id="hero-avatar-img" class="avatar-img" width="450" height="450" loading="eager">
+              </div>
+
+              <!-- Floating Tech Badges on Avatar -->
+              <div class="floating-badge badge-top-right">
+                <i class="fa-brands fa-react"></i> MERN Stack
+              </div>
+              <div class="floating-badge badge-mid-left">
+                <i class="fa-solid fa-award text-yellow"></i> CFG 2026
+              </div>
+              <div class="floating-badge badge-bottom-right">
+                <i class="fa-solid fa-shield-halved"></i> 9.55 CGPA
+              </div>
+              <div class="floating-badge badge-bottom-left">
+                <i class="fa-solid fa-brain"></i> ICPC Contestant
+              </div>
+
+              <!-- Hologram Scan Line Effect -->
+              <div class="card-scanline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT & HIGHLIGHTS -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Background & Core Focus</span>
+          <h2 class="section-title">About <span class="gradient-text">Boga Vivek</span></h2>
+          <p class="section-subtitle">Bridging strong theoretical computer science foundations with pragmatic full-stack architecture.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Text Biography Card -->
+          <div class="glass-card about-card-main">
+            <div class="card-glow-edge"></div>
+            <h3 class="card-heading"><i class="fa-solid fa-compass"></i> Engineering Vision</h3>
+            <p>
+              I am a <strong>Computer Science and Engineering (Data Science)</strong> undergraduate at 
+              <span class="highlight-text">VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</span> 
+              (Class of 2028). I maintain an academic standing of <strong>CGPA 9.55 / 10</strong>, paired with a solid track record in 
+              Intermediate MPC scoring <strong>983 / 1000</strong>.
+            </p>
+            <p>
+              My technical journey is centered on architecting robust <strong>MERN (MongoDB, Express.js, React.js, Node.js)</strong> web applications, 
+              building real-world web automations (Puppeteer, scheduled microservices, Chrome extensions), and solving algorithmic challenges.
+            </p>
+            <p>
+              I am actively seeking a <strong>Software Development Engineering (SDE) Internship</strong> where I can apply my system design fundamentals, problem-solving skills, and rapid full-stack execution to real-world products.
+            </p>
+
+            <div class="about-highlights-list">
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Academic Rigor:</strong> 9.55 CGPA in CSE (Data Science) with mastery in DSA, DBMS, and OOP.
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Production Mindset:</strong> Experience deploying end-to-end RESTful APIs, scheduled daemon workers, and browser extensions.
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Competitive Discipline:</strong> 1635 LeetCode rating with 370+ cumulative problems solved across LeetCode & CodeChef.
+                </div>
+              </div>
+            </div>
+
+            <!-- Action row inside about -->
+            <div class="about-actions">
+              <button class="btn btn-primary resume-trigger">
+                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+              </button>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fa-solid fa-handshake"></i> Let's Collaborate
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Info & Stats Side Column -->
+          <div class="about-sidebar">
+            <!-- Contact Card -->
+            <div class="glass-card side-info-card">
+              <h4 class="side-card-title"><i class="fa-solid fa-id-card"></i> Quick Contact Info</h4>
+              <ul class="info-list">
+                <li>
+                  <span class="info-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                  <div class="copyable-wrap">
+                    <a href="mailto:vivekboga2006@gmail.com" class="info-val">vivekboga2006@gmail.com</a>
+                    <button class="copy-pill-btn" data-copy="vivekboga2006@gmail.com" title="Copy Email">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <span class="info-label"><i class="fa-solid fa-phone"></i> Phone:</span>
+                  <div class="copyable-wrap">
+                    <a href="tel:+918121714172" class="info-val">+91-8121714172</a>
+                    <button class="copy-pill-btn" data-copy="+918121714172" title="Copy Phone">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <span class="info-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                  <span class="info-val">Hyderabad, Telangana, India</span>
+                </li>
+                <li>
+                  <span class="info-label"><i class="fa-brands fa-linkedin"></i> LinkedIn:</span>
+                  <a href="https://linkedin.com/in/vivekboga" target="_blank" rel="noopener noreferrer" class="info-link">
+                    linkedin.com/in/vivekboga <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </li>
+                <li>
+                  <span class="info-label"><i class="fa-brands fa-github"></i> GitHub:</span>
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="info-link">
+                    github.com/VivekBoga09 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Key Strengths Card -->
+            <div class="glass-card side-info-card">
+              <h4 class="side-card-title"><i class="fa-solid fa-cubes"></i> Core Strengths</h4>
+              <div class="tag-cloud">
+                <span class="tech-tag"><i class="fa-brands fa-react"></i> React.js</span>
+                <span class="tech-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span class="tech-tag"><i class="fa-solid fa-server"></i> Express.js</span>
+                <span class="tech-tag"><i class="fa-solid fa-database"></i> MongoDB</span>
+                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="tech-tag"><i class="fa-brands fa-java"></i> Java</span>
+                <span class="tech-tag"><i class="fa-solid fa-code"></i> C++</span>
+                <span class="tech-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+                <span class="tech-tag"><i class="fa-solid fa-robot"></i> Puppeteer Automation</span>
+                <span class="tech-tag"><i class="fa-brands fa-chrome"></i> Chrome Extensions</span>
+                <span class="tech-tag"><i class="fa-solid fa-clock"></i> Node-cron</span>
+                <span class="tech-tag"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE DEVELOPER TERMINAL PLAYGROUND -->
+    <section id="terminal-section" class="section terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Interactive Command Line</span>
+          <h2 class="section-title">Developer <span class="gradient-text">Terminal</span></h2>
+          <p class="section-subtitle">Type commands or click quick action buttons below to explore Boga Vivek's profile interactively.</p>
+        </div>
+
+        <div class="terminal-container glass-card">
+          <!-- Terminal Header Bar -->
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="t-dot t-red"></span>
+              <span class="t-dot t-yellow"></span>
+              <span class="t-dot t-green"></span>
+            </div>
+            <div class="terminal-title">
+              <i class="fa-solid fa-terminal"></i> boga-vivek@portfolio: ~ (zsh)
+            </div>
+            <div class="terminal-actions">
+              <button id="clear-term-btn" class="terminal-btn" title="Clear Terminal">
+                <i class="fa-solid fa-eraser"></i> Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Buttons -->
+          <div class="terminal-chips">
+            <span class="chips-label">Quick Commands:</span>
+            <button class="chip-cmd" data-cmd="whoami">whoami</button>
+            <button class="chip-cmd" data-cmd="skills">skills</button>
+            <button class="chip-cmd" data-cmd="projects">projects</button>
+            <button class="chip-cmd" data-cmd="leetcode">leetcode</button>
+            <button class="chip-cmd" data-cmd="education">education</button>
+            <button class="chip-cmd" data-cmd="contact">contact</button>
+            <button class="chip-cmd" data-cmd="sudo hire">sudo hire</button>
+            <button class="chip-cmd" data-cmd="help">help</button>
+          </div>
+
+          <!-- Terminal Output Area -->
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-line output-text">
+              <span class="term-banner">
+██████╗  ██████╗  ██████╗  █████╗     ██╗   ██╗██╗██╗   ██╗███████╗██╗  ██╗
+██╔══██╗██╔═══██╗██╔════╝ ██╔══██╗    ██║   ██║██║██║   ██║██╔════╝██║ ██╔╝
+██████╔╝██║   ██║██║  ███╗███████║    ██║   ██║██║██║   ██║█████╗  █████╔╝ 
+██╔══██╗██║   ██║██║   ██║██╔══██║    ╚██╗ ██╔╝██║╚██╗ ██╔╝██╔══╝  ██╔═██╗ 
+██████╔╝╚██████╔╝╚██████╔╝██║  ██║     ╚████╔╝ ██║ ╚████╔╝ ███████╗██║  ██╗
+╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝      ╚═══╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
+              </span>
+            </div>
+            <div class="term-line output-text text-muted">
+              Welcome to Boga Vivek's interactive terminal. Type <span class="term-highlight">help</span> or click any quick command chip above.
+            </div>
+            <div class="term-line output-text">
+              Status: <span class="text-success">Ready for SDE Internships</span> | CGPA: <span class="text-accent">9.55 / 10</span> | LeetCode: <span class="text-warning">1635</span>
+            </div>
+          </div>
+
+          <!-- Terminal Input Row -->
+          <div class="terminal-input-row">
+            <span class="prompt-user">vivek@vnr-vjiet</span>:<span class="prompt-path">~</span><span class="prompt-sym">$</span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="Type a command (e.g., 'help', 'projects', 'skills')..." autocomplete="off" spellcheck="false">
+            <button id="terminal-run-btn" class="terminal-send-btn" title="Run command">
+              <i class="fa-solid fa-arrow-turn-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TECHNICAL SKILLS -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Technical Arsenal</span>
+          <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">Comprehensive stack developed through academic coursework, projects, and competitive programming.</p>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skills-filter-nav">
+          <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn" data-filter="languages">Languages</button>
+          <button class="skill-filter-btn" data-filter="web">Web & Full-Stack</button>
+          <button class="skill-filter-btn" data-filter="database">Databases</button>
+          <button class="skill-filter-btn" data-filter="tools">Tools & Automation</button>
+          <button class="skill-filter-btn" data-filter="fundamentals">Core CS</button>
+        </div>
+
+        <!-- Skills Grid Cards -->
+        <div class="skills-category-grid" id="skills-grid">
+          
+          <!-- Category 1: Languages -->
+          <div class="glass-card skill-cat-card" data-category="languages">
+            <div class="cat-header">
+              <div class="cat-icon-wrap"><i class="fa-solid fa-terminal"></i></div>
+              <div>
+                <h3 class="cat-title">Programming Languages</h3>
+                <span class="cat-meta">Foundational & Algorithmic</span>
+              </div>
+            </div>
+            <div class="skills-item-list">
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-java text-orange"></i> Java</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">OOP, Collections Framework, Competitive Programming</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-python text-yellow"></i> Python</span>
+                  <span class="skill-level">Certified (HackerRank)</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 92%;"></div></div>
+                <span class="skill-desc">Data analysis, scripting, automation, AI pipelines</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-js text-yellow"></i> JavaScript (ES6+)</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">Asynchronous programming, event loops, DOM, Promises</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-c text-blue"></i> C++</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 88%;"></div></div>
+                <span class="skill-desc">STL, memory pointers, high-speed problem solving</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-database text-cyan"></i> SQL</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 85%;"></div></div>
+                <span class="skill-desc">Complex queries, indexing, joins, schema design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Web & Full-Stack -->
+          <div class="glass-card skill-cat-card" data-category="web">
+            <div class="cat-header">
+              <div class="cat-icon-wrap"><i class="fa-solid fa-globe"></i></div>
+              <div>
+                <h3 class="cat-title">Web Technologies</h3>
+                <span class="cat-meta">Full-Stack MERN Architecture</span>
+              </div>
+            </div>
+            <div class="skills-item-list">
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-react text-cyan"></i> React.js</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">Hooks, state management, modular component architecture</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-node-js text-green"></i> Node.js</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 88%;"></div></div>
+                <span class="skill-desc">Event-driven runtime, asynchronous microservices</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-server text-purple"></i> Express.js</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 88%;"></div></div>
+                <span class="skill-desc">REST API design, middleware, auth routing, error handling</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-html5 text-orange"></i> HTML5 & CSS3</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 95%;"></div></div>
+                <span class="skill-desc">Responsive layouts, CSS grid/flexbox, animations</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-network-wired text-cyan"></i> RESTful APIs</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">Endpoint optimization, JSON serialization, security</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases -->
+          <div class="glass-card skill-cat-card" data-category="database">
+            <div class="cat-header">
+              <div class="cat-icon-wrap"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <h3 class="cat-title">Databases & Storage</h3>
+                <span class="cat-meta">Relational & NoSQL Datastores</span>
+              </div>
+            </div>
+            <div class="skills-item-list">
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-leaf text-green"></i> MongoDB</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 88%;"></div></div>
+                <span class="skill-desc">NoSQL collections, Mongoose ODM, aggregation pipelines</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-server text-blue"></i> MySQL</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 84%;"></div></div>
+                <span class="skill-desc">Relational schemas, foreign keys, normalization</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-file-code text-yellow"></i> JSON & Storage</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 92%;"></div></div>
+                <span class="skill-desc">Data serialization, local storage, state hydration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Automation -->
+          <div class="glass-card skill-cat-card" data-category="tools">
+            <div class="cat-header">
+              <div class="cat-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div>
+                <h3 class="cat-title">Tools & Automation</h3>
+                <span class="cat-meta">DevOps, Bots & Extensions</span>
+              </div>
+            </div>
+            <div class="skills-item-list">
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-robot text-purple"></i> Puppeteer Automation</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">Headless browser control, DOM scraping, anti-bot handling</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-chrome text-yellow"></i> Chrome Extensions</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 88%;"></div></div>
+                <span class="skill-desc">Manifest V3, content scripts, background workers, storage</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-clock text-orange"></i> Node-cron & Daemons</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 86%;"></div></div>
+                <span class="skill-desc">Automated scheduled jobs, background interval workers</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-brands fa-git-alt text-orange"></i> Git & GitHub</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">Version control, branching, PRs, collaborative workflows</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-chart-pie text-cyan"></i> Tableau (Udemy)</span>
+                  <span class="skill-level">Certified</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 82%;"></div></div>
+                <span class="skill-desc">Interactive dashboarding, exploratory data visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 5: Core CS Fundamentals -->
+          <div class="glass-card skill-cat-card" data-category="fundamentals">
+            <div class="cat-header">
+              <div class="cat-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+              <div>
+                <h3 class="cat-title">Computer Science Foundations</h3>
+                <span class="cat-meta">Core Academic Rigor</span>
+              </div>
+            </div>
+            <div class="skills-item-list">
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-sitemap text-accent"></i> Data Structures & Algorithms</span>
+                  <span class="skill-level">Exemplary</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 94%;"></div></div>
+                <span class="skill-desc">Trees, Graphs, DP, Binary Search, Heaps, Hash Maps</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-database text-blue"></i> Database Management (DBMS)</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+                <span class="skill-desc">ACID properties, transactions, concurrency, indexing</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-cube text-purple"></i> Object Oriented Programming</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 92%;"></div></div>
+                <span class="skill-desc">Encapsulation, Polymorphism, Inheritance, Abstraction</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-label-row">
+                  <span class="skill-name"><i class="fa-solid fa-microchip text-yellow"></i> Generative AI Foundations</span>
+                  <span class="skill-level">Certified (IBM)</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 85%;"></div></div>
+                <span class="skill-desc">LLMs, prompt engineering, generative architectures</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FEATURED PROJECTS -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Engineering Showcase</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications engineered with modern stacks, automation pipelines, and clean architectures.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filter-nav">
+          <button class="proj-filter-btn active" data-filter="all">All Projects (3)</button>
+          <button class="proj-filter-btn" data-filter="mern">Full-Stack MERN</button>
+          <button class="proj-filter-btn" data-filter="automation">Automation & Extensions</button>
+          <button class="proj-filter-btn" data-filter="api">APIs & Frontend</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- PROJECT 1: Amazon Price Tracking System -->
+          <article class="glass-card project-card" data-category="mern automation" data-project="amazon">
+            <div class="project-media-wrap">
+              <img src="assets/images/project-amazon.jpg" alt="Amazon Price Tracking System with Chrome Extension" class="project-img" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-action-btns">
+                  <button class="btn btn-primary btn-sm view-details-btn" data-modal="modal-amazon">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> View Deep Dive
+                  </button>
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge-tag">
+                <i class="fa-brands fa-chrome"></i> Extension + Bot
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-top">
+                <span class="project-category">Full-Stack MERN • Automation</span>
+                <span class="project-status"><i class="fa-solid fa-circle"></i> Production Ready</span>
+              </div>
+
+              <h3 class="project-title">Amazon Price Tracking System with Chrome Extension</h3>
+
+              <p class="project-description">
+                Engineered a comprehensive full-stack price monitoring system that empowers users to track Amazon product price drops in real-time. Features an integrated Chrome Extension and Telegram Bot alerting engine.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Chrome Extension:</strong> Injects directly onto Amazon product pages to add products to watchlists with one click via RESTful APIs.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Automated Scraping:</strong> Headless browser workers utilizing <strong>Puppeteer</strong> and <strong>node-cron</strong> to monitor price fluctuations 24/7.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Real-Time Alerts:</strong> Integrated with <strong>Telegram Bot API</strong> to send instant push notifications when target discount thresholds are met.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Puppeteer</span>
+                <span class="tag">Chrome Extensions (MV3)</span>
+                <span class="tag">Node-cron</span>
+                <span class="tag">Telegram API</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-outline btn-block view-details-btn" data-modal="modal-amazon">
+                  <span>Explore Architecture & Live Simulation</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Ambulance Priority Traffic Control System -->
+          <article class="glass-card project-card" data-category="mern" data-project="traffic">
+            <div class="project-media-wrap">
+              <img src="assets/images/project-traffic.jpg" alt="Ambulance Priority Traffic Control System" class="project-img" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-action-btns">
+                  <button class="btn btn-primary btn-sm view-details-btn" data-modal="modal-traffic">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> View Deep Dive
+                  </button>
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge-tag badge-emerald">
+                <i class="fa-solid fa-truck-medical"></i> Smart Emergency
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-top">
+                <span class="project-category">Smart City • MERN Stack</span>
+                <span class="project-status"><i class="fa-solid fa-circle"></i> Real-time Logic</span>
+              </div>
+
+              <h3 class="project-title">Ambulance Priority Traffic Control System</h3>
+
+              <p class="project-description">
+                Designed an intelligent smart traffic management system that automatically establishes green corridors for emergency medical vehicles, drastically cutting transit latency in heavily congested urban intersections.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Dynamic Green Corridors:</strong> Automatic route clearance for ambulances using real-time spatial prioritization algorithms.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>RESTful Microservices:</strong> Constructed using <strong>Node.js</strong> and <strong>Express.js</strong> with <strong>MongoDB</strong> datastore to handle signal telemetry.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Prioritization Engine:</strong> Evaluates approaching emergency units and adjusts traffic signal phase timing in real time.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tag">React.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Smart City Logic</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-outline btn-block view-details-btn" data-modal="modal-traffic">
+                  <span>Explore Corridor Simulation & API Design</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Weather Forecast Web Application -->
+          <article class="glass-card project-card" data-category="api" data-project="weather">
+            <div class="project-media-wrap">
+              <img src="assets/images/project-weather.jpg" alt="Weather Forecast Web Application" class="project-img" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-action-btns">
+                  <button class="btn btn-primary btn-sm view-details-btn" data-modal="modal-weather">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> View Deep Dive
+                  </button>
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge-tag badge-cyan">
+                <i class="fa-solid fa-cloud-sun"></i> Live Geolocation
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-top">
+                <span class="project-category">Frontend • Weather API</span>
+                <span class="project-status"><i class="fa-solid fa-circle"></i> Live Sync</span>
+              </div>
+
+              <h3 class="project-title">Weather Forecast Web Application</h3>
+
+              <p class="project-description">
+                Created a responsive and interactive meteorological application providing current ambient weather observations and high-precision 5-day forecasts with automated geolocation integration.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Live Geolocation:</strong> Integrates Browser Geolocation API to instantly detect user coordinates and deliver localized atmospheric forecasts.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Asynchronous OpenWeather API:</strong> Handles concurrent REST API queries for humidity, wind, temperature trends, and forecast charts.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Adaptive Design:</strong> Fully responsive interface with custom dynamic styling based on ambient weather conditions.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tag">React.js</span>
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">OpenWeather API</span>
+                <span class="tag">Browser Geolocation API</span>
+                <span class="tag">Async / Await</span>
+                <span class="tag">Responsive CSS</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-outline btn-block view-details-btn" data-modal="modal-weather">
+                  <span>Explore Weather Radar & Live Demo</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: COMPETITIVE PROGRAMMING & DSA -->
+    <section id="competitive" class="section competitive-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Algorithmic Prowess</span>
+          <h2 class="section-title">Competitive <span class="gradient-text">Programming</span></h2>
+          <p class="section-subtitle">Consistent problem solving across global platforms, backed by strong computational reasoning.</p>
+        </div>
+
+        <div class="cp-grid">
+          <!-- LeetCode Card -->
+          <div class="glass-card cp-card">
+            <div class="cp-card-top">
+              <div class="cp-brand">
+                <div class="cp-icon-wrap leetcode-bg">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h3 class="cp-title">LeetCode</h3>
+                  <a href="https://leetcode.com/u/vivekboga2006/" target="_blank" rel="noopener noreferrer" class="cp-handle">
+                    @vivekboga2006 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="rating-badge rating-badge-lc">
+                <span class="rating-num">1635</span>
+                <span class="rating-lbl">Contest Rating</span>
+              </div>
+            </div>
+
+            <div class="cp-stats-row">
+              <div class="cp-stat-box">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Problems Solved</span>
+              </div>
+              <div class="cp-stat-box">
+                <span class="stat-number">1635</span>
+                <span class="stat-label">Peak Rating</span>
+              </div>
+              <div class="cp-stat-box">
+                <span class="stat-number">Active</span>
+                <span class="stat-label">Weekly Contests</span>
+              </div>
+            </div>
+
+            <!-- Problem Difficulty Breakdown -->
+            <div class="dsa-distribution">
+              <h4 class="dist-title">Problem Distribution Overview</h4>
+              <div class="dist-bars">
+                <div class="dist-item">
+                  <div class="dist-label-row">
+                    <span class="difficulty-tag easy">Easy</span>
+                    <span class="count">65+ Solved</span>
+                  </div>
+                  <div class="dist-track"><div class="dist-bar easy-bar" style="width: 45%;"></div></div>
+                </div>
+                <div class="dist-item">
+                  <div class="dist-label-row">
+                    <span class="difficulty-tag medium">Medium</span>
+                    <span class="count">75+ Solved</span>
+                  </div>
+                  <div class="dist-track"><div class="dist-bar medium-bar" style="width: 50%;"></div></div>
+                </div>
+                <div class="dist-item">
+                  <div class="dist-label-row">
+                    <span class="difficulty-tag hard">Hard</span>
+                    <span class="count">10+ Solved</span>
+                  </div>
+                  <div class="dist-track"><div class="dist-bar hard-bar" style="width: 15%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-topics">
+              <span class="topic-pill">Dynamic Programming</span>
+              <span class="topic-pill">Trees & Graphs</span>
+              <span class="topic-pill">Binary Search</span>
+              <span class="topic-pill">Two Pointers</span>
+              <span class="topic-pill">Recursion & Backtracking</span>
+            </div>
+          </div>
+
+          <!-- CodeChef Card -->
+          <div class="glass-card cp-card">
+            <div class="cp-card-top">
+              <div class="cp-brand">
+                <div class="cp-icon-wrap codechef-bg">
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                  <h3 class="cp-title">CodeChef</h3>
+                  <span class="cp-handle">Division Competitor</span>
+                </div>
+              </div>
+              <div class="rating-badge rating-badge-cc">
+                <span class="rating-num">220+</span>
+                <span class="rating-lbl">Problems Solved</span>
+              </div>
+            </div>
+
+            <div class="cp-stats-row">
+              <div class="cp-stat-box">
+                <span class="stat-number">220+</span>
+                <span class="stat-label">Problems Solved</span>
+              </div>
+              <div class="cp-stat-box">
+                <span class="stat-number">Global</span>
+                <span class="stat-label">Rated Contests</span>
+              </div>
+              <div class="cp-stat-box">
+                <span class="stat-number">Star</span>
+                <span class="stat-label">Active Competitor</span>
+              </div>
+            </div>
+
+            <p class="cp-summary-desc">
+              Regular participant in CodeChef Starters and long challenges, testing algorithmic speed and edge-case resilience in C++ and Java.
+            </p>
+
+            <!-- Other Platforms Banner -->
+            <div class="other-platforms-box">
+              <h4 class="dist-title">Additional Active Platforms</h4>
+              <div class="platforms-list">
+                <div class="plat-item">
+                  <i class="fa-solid fa-chart-line text-cyan"></i>
+                  <div>
+                    <strong>Codeforces:</strong> Active participant in Div. 2 & Div. 3 rounds.
+                  </div>
+                </div>
+                <div class="plat-item">
+                  <i class="fa-brands fa-hackerrank text-green"></i>
+                  <div>
+                    <strong>HackerRank:</strong> Certified in Python Programming and Problem Solving.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DSA Strengths Visual Matrix -->
+        <div class="dsa-core-pills glass-card">
+          <div class="core-heading-row">
+            <h4><i class="fa-solid fa-graduation-cap"></i> Core CS Coursework</h4>
+            <span class="badge-tag">Academic Honors Curriculum</span>
+          </div>
+          <div class="coursework-chips">
+            <div class="coursework-chip">
+              <i class="fa-solid fa-network-wired"></i>
+              <div>
+                <strong>Data Structures & Algorithms</strong>
+                <span>Time & space complexity optimization, graph traversals, greedy approaches</span>
+              </div>
+            </div>
+            <div class="coursework-chip">
+              <i class="fa-solid fa-database"></i>
+              <div>
+                <strong>Database Management Systems</strong>
+                <span>Relational calculus, SQL indexing, ACID guarantees, transaction locks</span>
+              </div>
+            </div>
+            <div class="coursework-chip">
+              <i class="fa-solid fa-cubes-stacked"></i>
+              <div>
+                <strong>Object Oriented Programming</strong>
+                <span>Polymorphism, abstraction patterns, SOLID principles, design patterns</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Academic Journey & Credentials</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+          <p class="section-subtitle">Consistent top-tier academic excellence paired with industry certifications.</p>
+        </div>
+
+        <div class="edu-cert-layout">
+          <!-- Left Column: Education Timeline -->
+          <div class="edu-column">
+            <h3 class="column-title"><i class="fa-solid fa-graduation-cap"></i> Formal Education</h3>
+            
+            <div class="timeline">
+              <!-- B.Tech Card -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="glass-card timeline-card">
+                  <div class="timeline-period">2024 — 2028</div>
+                  <h4 class="timeline-degree">B.Tech in Computer Science and Engineering (Data Science)</h4>
+                  <div class="timeline-institution">
+                    <i class="fa-solid fa-building-columns"></i> VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad
+                  </div>
+                  <div class="timeline-score-badge">
+                    <span class="badge-label">CGPA:</span>
+                    <span class="badge-value">9.55 / 10</span>
+                  </div>
+                  <p class="timeline-notes">
+                    Specializing in Data Science, advanced algorithms, and full-stack software development. Ranked among top academic performers in the department.
+                  </p>
+                  <div class="timeline-tags">
+                    <span>Data Structures</span>
+                    <span>Algorithms</span>
+                    <span>DBMS</span>
+                    <span>OOP</span>
+                    <span>Data Science</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Intermediate Card -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="glass-card timeline-card">
+                  <div class="timeline-period">2022 — 2024</div>
+                  <h4 class="timeline-degree">Intermediate (MPC - Mathematics, Physics, Chemistry)</h4>
+                  <div class="timeline-institution">
+                    <i class="fa-solid fa-school"></i> Sri Chaitanya College
+                  </div>
+                  <div class="timeline-score-badge badge-emerald">
+                    <span class="badge-label">Score:</span>
+                    <span class="badge-value">983 / 1000 (98.3%)</span>
+                  </div>
+                  <p class="timeline-notes">
+                    Secured top percentile academic score demonstrating strong analytical, mathematical, and logical problem-solving foundations.
+                  </p>
+                  <div class="timeline-tags">
+                    <span>Mathematics</span>
+                    <span>Physics</span>
+                    <span>Analytical Reasoning</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Certifications & Accreditations -->
+          <div class="cert-column">
+            <h3 class="column-title"><i class="fa-solid fa-award"></i> Certifications & Achievements</h3>
+
+            <div class="cert-cards-list">
+              <!-- Cert 1: Python -->
+              <div class="glass-card cert-card">
+                <div class="cert-icon-box cert-py">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <div class="cert-body">
+                  <div class="cert-issuer">HackerRank Certification</div>
+                  <h4 class="cert-title">Python Programming</h4>
+                  <p class="cert-desc">
+                    Demonstrating verified proficiency in Python programming including data structures, functional paradigms, and algorithmic problem-solving.
+                  </p>
+                  <div class="cert-footer">
+                    <span class="cert-verified"><i class="fa-solid fa-circle-check"></i> Verified Skill</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cert 2: Tableau -->
+              <div class="glass-card cert-card">
+                <div class="cert-icon-box cert-tableau">
+                  <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <div class="cert-body">
+                  <div class="cert-issuer">Udemy Professional Certificate</div>
+                  <h4 class="cert-title">Data Visualization using Tableau</h4>
+                  <p class="cert-desc">
+                    Mastered designing interactive visual analytics dashboards, multi-variable exploratory data analysis, and storytelling with complex datasets.
+                  </p>
+                  <div class="cert-footer">
+                    <span class="cert-verified"><i class="fa-solid fa-circle-check"></i> Verified Coursework</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cert 3: IBM GenAI -->
+              <div class="glass-card cert-card">
+                <div class="cert-icon-box cert-ibm">
+                  <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div class="cert-body">
+                  <div class="cert-issuer">IBM Professional Foundation</div>
+                  <h4 class="cert-title">Introduction to Generative AI</h4>
+                  <p class="cert-desc">
+                    Gained foundational knowledge of generative AI models, transformer architectures, prompt engineering, LLMs, and real-world AI applications.
+                  </p>
+                  <div class="cert-footer">
+                    <span class="cert-verified"><i class="fa-solid fa-circle-check"></i> Verified Foundation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT & CONNECT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Let's Connect</span>
+          <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Interested in offering an internship, collaborating on a project, or just want to say hi? My inbox is always open!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Cards -->
+          <div class="contact-info-col">
+            <div class="glass-card contact-detail-card">
+              <h3 class="card-heading"><i class="fa-solid fa-paper-plane"></i> Contact Channels</h3>
+              
+              <div class="contact-methods">
+                <!-- Method 1: Email -->
+                <div class="c-method-item">
+                  <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="c-text">
+                    <span class="c-label">Direct Email</span>
+                    <a href="mailto:vivekboga2006@gmail.com" class="c-val">vivekboga2006@gmail.com</a>
+                  </div>
+                  <button class="copy-pill-btn" data-copy="vivekboga2006@gmail.com" title="Copy Email">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <!-- Method 2: Phone -->
+                <div class="c-method-item">
+                  <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="c-text">
+                    <span class="c-label">Phone / WhatsApp</span>
+                    <a href="tel:+918121714172" class="c-val">+91-8121714172</a>
+                  </div>
+                  <button class="copy-pill-btn" data-copy="+918121714172" title="Copy Phone">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <!-- Method 3: Location -->
+                <div class="c-method-item">
+                  <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="c-text">
+                    <span class="c-label">Base Location</span>
+                    <span class="c-val">Hyderabad, Telangana, India (IST / UTC+5:30)</span>
+                  </div>
+                </div>
+
+                <!-- Method 4: LinkedIn -->
+                <div class="c-method-item">
+                  <div class="c-icon"><i class="fa-brands fa-linkedin"></i></div>
+                  <div class="c-text">
+                    <span class="c-label">LinkedIn</span>
+                    <a href="https://linkedin.com/in/vivekboga" target="_blank" rel="noopener noreferrer" class="c-val">
+                      linkedin.com/in/vivekboga
+                    </a>
+                  </div>
+                  <a href="https://linkedin.com/in/vivekboga" target="_blank" rel="noopener noreferrer" class="link-ext-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+
+                <!-- Method 5: GitHub -->
+                <div class="c-method-item">
+                  <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+                  <div class="c-text">
+                    <span class="c-label">GitHub</span>
+                    <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="c-val">
+                      github.com/VivekBoga09
+                    </a>
+                  </div>
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="link-ext-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Status Banner -->
+              <div class="availability-card">
+                <div class="avail-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="avail-text">
+                  <strong>Current Status:</strong> Actively interviewing for 2025/2026 Software Development Engineer (SDE) internships. Available for remote or in-person roles in Hyderabad & across India.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Working Contact Form -->
+          <div class="contact-form-col">
+            <div class="glass-card contact-form-card">
+              <h3 class="card-heading"><i class="fa-solid fa-comment-dots"></i> Send a Direct Message</h3>
+              <p class="form-intro">Feel free to submit an inquiry. This sends directly to my inbox!</p>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name" class="form-label">Your Name <span class="req">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-user"></i>
+                      <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Satya Nadella" required>
+                    </div>
+                    <span class="field-error" id="name-error"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-email" class="form-label">Your Email <span class="req">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-at"></i>
+                      <input type="email" id="contact-email" name="email" class="form-control" placeholder="e.g. recruiter@company.com" required>
+                    </div>
+                    <span class="field-error" id="email-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">Subject / Purpose <span class="req">*</span></label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="e.g. SDE Internship Opportunity" required>
+                  </div>
+                  <span class="field-error" id="subject-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Message <span class="req">*</span></label>
+                  <textarea id="contact-message" name="message" class="form-control textarea" rows="5" placeholder="Hi Vivek, we came across your portfolio and were impressed by your full-stack projects and LeetCode rating..." required></textarea>
+                  <span class="field-error" id="message-error"></span>
+                </div>
+
+                <button type="submit" id="submit-form-btn" class="btn btn-primary btn-block submit-btn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Send Message</span>
+                </button>
+              </form>
+
+              <!-- Success Notification Alert -->
+              <div id="form-success-banner" class="form-success-banner" style="display: none;">
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="success-content">
+                  <h4>Message Sent Successfully!</h4>
+                  <p>Thank you for reaching out! A direct copy will also open in your email client to ensure Vivek receives it promptly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-name">&lt;Boga Vivek /&gt;</span>
+          <p>Computer Science & Engineering (Data Science) • Full-Stack Developer</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/vivekboga" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://leetcode.com/u/vivekboga2006/" target="_blank" rel="noopener noreferrer" title="LeetCode"><i class="fa-solid fa-code"></i></a>
+          <a href="mailto:vivekboga2006@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+918121714172" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025–2026 Boga Vivek. Built with modern web standards, HTML5, CSS3 & JavaScript.</p>
+        <button id="back-to-top" class="back-to-top" title="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODAL 1: AMAZON PRICE TRACKER DEEP DIVE -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="modal-amazon">
+    <div class="modal-dialog glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-tag">Deep Dive Architecture</span>
+          <h3 class="modal-title">Amazon Price Tracking System with Chrome Extension</h3>
+        </div>
+        <button class="modal-close-btn" data-close="modal-amazon">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img src="assets/images/project-amazon.jpg" alt="Amazon Tracker Architecture" class="modal-img">
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-lightbulb"></i> Project Overview</h4>
+          <p>
+            An autonomous, distributed web application that solves the problem of online shopping price volatility. 
+            Shoppers frequently miss flash discounts on Amazon; this system enables them to seamlessly pin products 
+            straight from their browser and receive instant Telegram mobile alerts when prices dip below desired targets.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-microchip"></i> Key Architectural Pillars</h4>
+          <ul class="modal-bullets">
+            <li>
+              <strong>Manifest V3 Chrome Extension:</strong> Injected content scripts detect Amazon ASINs and real-time DOM price elements. Users click "Track this product" in the extension popup to register tracking parameters directly with the backend.
+            </li>
+            <li>
+              <strong>Headless Scraping Daemon:</strong> Powered by <strong>Puppeteer</strong> running scheduled intervals via <strong>node-cron</strong>. Features stealth headers, simulated human scrolling, and rate-limiting to bypass bot detection.
+            </li>
+            <li>
+              <strong>RESTful API & MongoDB:</strong> Node.js & Express.js microservice maintaining historical price snapshots, tracking thresholds, and user configurations.
+            </li>
+            <li>
+              <strong>Telegram Bot Integration:</strong> When a price drop event fires, the notification dispatcher routes a formatted Telegram markdown alert with direct discount links and price delta statistics.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive Simulator Widget inside Modal -->
+        <div class="modal-section sim-box">
+          <h4><i class="fa-solid fa-play"></i> Interactive Simulator: Test Price Drop Alert</h4>
+          <p class="sim-sub">Simulate a product on Amazon dropping price and watch the automated Telegram notification trigger:</p>
+          
+          <div class="sim-controls">
+            <div class="sim-product-info">
+              <strong>Product:</strong> Sony WH-1000XM5 Wireless Headphones
+              <div class="sim-prices">
+                <span>Original: <del>₹29,990</del></span>
+                <span class="text-success font-bold">Target Alert: ≤ ₹24,000</span>
+              </div>
+            </div>
+            <button id="sim-trigger-btn" class="btn btn-sm btn-primary">
+              <i class="fa-solid fa-bolt"></i> Simulate Price Drop to ₹22,499
+            </button>
+          </div>
+
+          <div id="sim-notification-result" class="sim-notification-result" style="display: none;">
+            <div class="sim-tg-card">
+              <div class="tg-header">
+                <i class="fa-brands fa-telegram text-cyan"></i>
+                <span>PriceBot Alert • Just now</span>
+              </div>
+              <div class="tg-body">
+                🚨 <strong>PRICE DROP DETECTED!</strong><br>
+                <strong>Sony WH-1000XM5</strong> dropped from <del>₹29,990</del> to <strong>₹22,499</strong> (Save 25%)!<br>
+                Threshold (₹24,000) breached. Target reached!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-tags"></i> Technology Stack</h4>
+          <div class="modal-tech-pills">
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Puppeteer</span>
+            <span class="tag">node-cron</span>
+            <span class="tag">Chrome Extension API</span>
+            <span class="tag">Telegram Bot API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repo
+        </a>
+        <button class="btn btn-outline" data-close="modal-amazon">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 2: AMBULANCE TRAFFIC SYSTEM DEEP DIVE -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="modal-traffic">
+    <div class="modal-dialog glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-tag">Deep Dive Architecture</span>
+          <h3 class="modal-title">Ambulance Priority Traffic Control System</h3>
+        </div>
+        <button class="modal-close-btn" data-close="modal-traffic">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img src="assets/images/project-traffic.jpg" alt="Traffic Control Simulation" class="modal-img">
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-lightbulb"></i> Project Overview</h4>
+          <p>
+            Emergency medical vehicles encounter severe delays during rush-hour urban gridlock, where minutes dictate patient survival. 
+            This system establishes an intelligent IoT & software layer that dynamically creates green traffic waves for approaching ambulances.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-microchip"></i> System Architecture & Logic</h4>
+          <ul class="modal-bullets">
+            <li>
+              <strong>Emergency Telemetry Ingestion:</strong> Express.js APIs capture location, velocity vector, and patient severity tier emitted from emergency dispatch.
+            </li>
+            <li>
+              <strong>Prioritization & Corridors Algorithm:</strong> Calculates the estimated time of arrival (ETA) at consecutive intersections. Automatically modulates signal phase controllers to clear queuing traffic 45 seconds prior to arrival.
+            </li>
+            <li>
+              <strong>MongoDB Real-Time State:</strong> Records real-time intersection sensor states, current signal phases, emergency logs, and automated fail-safe overrides.
+            </li>
+            <li>
+              <strong>React Operations Center:</strong> Interactive control dashboard allowing municipal traffic operators to monitor emergency corridors, override manual overrides, and review clearance analytics.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive Simulator Widget inside Modal -->
+        <div class="modal-section sim-box">
+          <h4><i class="fa-solid fa-play"></i> Interactive Corridor Simulation</h4>
+          <p class="sim-sub">Toggle emergency dispatch to view automatic signal state transition from Congested Red to Priority Green corridor:</p>
+          
+          <div class="traffic-sim-panel">
+            <div class="sim-traffic-light">
+              <span class="light red" id="sim-light-red"></span>
+              <span class="light yellow" id="sim-light-yellow"></span>
+              <span class="light green" id="sim-light-green"></span>
+            </div>
+            <div class="sim-traffic-meta">
+              <div id="sim-traffic-status" class="status-badge-red">Intersection Status: Normal Cycle (Red Active)</div>
+              <div class="sim-ambulance-state">Emergency Unit: <span id="sim-amb-text">Standing by</span></div>
+            </div>
+            <button id="sim-dispatch-amb-btn" class="btn btn-sm btn-primary">
+              <i class="fa-solid fa-truck-medical"></i> Dispatch Emergency Ambulance
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-tags"></i> Technology Stack</h4>
+          <div class="modal-tech-pills">
+            <span class="tag">React.js</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">RESTful Architecture</span>
+            <span class="tag">Real-Time Prioritization Logic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repo
+        </a>
+        <button class="btn btn-outline" data-close="modal-traffic">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 3: WEATHER FORECAST WEB APP DEEP DIVE -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="modal-weather">
+    <div class="modal-dialog glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-tag">Deep Dive Architecture</span>
+          <h3 class="modal-title">Weather Forecast Web Application</h3>
+        </div>
+        <button class="modal-close-btn" data-close="modal-weather">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img src="assets/images/project-weather.jpg" alt="Weather Forecast Application" class="modal-img">
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-lightbulb"></i> Project Overview</h4>
+          <p>
+            A high-performance weather intelligence web application that delivers instant, hyper-localized meteorological data 
+            with zero configuration required from the user, alongside 5-day atmospheric forecasting.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-microchip"></i> Key Implementation Highlights</h4>
+          <ul class="modal-bullets">
+            <li>
+              <strong>Browser Geolocation API Integration:</strong> Seamlessly detects client coordinates upon consent, eliminating the friction of manual city input.
+            </li>
+            <li>
+              <strong>Asynchronous REST Queries:</strong> Uses modern JavaScript <code>async/await</code> to fetch and parse OpenWeather API endpoints, guaranteeing instantaneous UI hydration and smooth skeleton loaders.
+            </li>
+            <li>
+              <strong>5-Day Forecast Visualizer:</strong> Aggregates diurnal temperature highs, lows, precipitation probabilities, wind speed vectors, and UV indexes.
+            </li>
+            <li>
+              <strong>Adaptive Visual System:</strong> Dynamically adjusts color gradients and ambient background themes matching current weather states (Clear Sunny, Stormy, Rainy, Overcast).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive City Switcher inside Modal -->
+        <div class="modal-section sim-box">
+          <h4><i class="fa-solid fa-play"></i> Live Weather Preview Widget</h4>
+          <p class="sim-sub">Select a metropolitan hub to test the live-rendered atmospheric card:</p>
+          
+          <div class="city-selector-row">
+            <button class="city-btn active" data-city="hyderabad">Hyderabad</button>
+            <button class="city-btn" data-city="bangalore">Bangalore</button>
+            <button class="city-btn" data-city="newyork">New York</button>
+            <button class="city-btn" data-city="tokyo">Tokyo</button>
+          </div>
+
+          <div class="weather-demo-card" id="weather-demo-card">
+            <div class="w-card-header">
+              <span class="w-city" id="w-city">Hyderabad, IN</span>
+              <span class="w-time" id="w-time">Live Forecast</span>
+            </div>
+            <div class="w-temp-row">
+              <i class="fa-solid fa-cloud-sun w-icon" id="w-icon"></i>
+              <div class="w-temp" id="w-temp">29°C</div>
+              <div class="w-cond" id="w-cond">Partly Cloudy</div>
+            </div>
+            <div class="w-stats-grid">
+              <div class="w-stat"><span>Humidity:</span> <strong id="w-hum">62%</strong></div>
+              <div class="w-stat"><span>Wind:</span> <strong id="w-wind">14 km/h</strong></div>
+              <div class="w-stat"><span>Air Quality:</span> <strong id="w-aqi">Good (42)</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-tags"></i> Technology Stack</h4>
+          <div class="modal-tech-pills">
+            <span class="tag">React.js</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">OpenWeather API</span>
+            <span class="tag">Browser Geolocation API</span>
+            <span class="tag">CSS Grid & Flexbox</span>
+            <span class="tag">Asynchronous Promises</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repo
+        </a>
+        <button class="btn btn-outline" data-close="modal-weather">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: INTERACTIVE RESUME PREVIEW & PRINT -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="modal-resume">
+    <div class="modal-dialog glass-card resume-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-tag">Official Document</span>
+          <h3 class="modal-title">Boga Vivek — Software Engineer Resume</h3>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="assets/Boga_Vivek_Resume.pdf" download="Boga_Vivek_Resume.pdf" class="btn btn-sm btn-primary" title="Download Official PDF Resume directly">
+            <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+          </a>
+          <button id="print-resume-btn" class="btn btn-sm btn-outline" title="Print or Save Tailored ATS View">
+            <i class="fa-solid fa-print"></i> Print ATS View
+          </button>
+          <button class="modal-close-btn" data-close="modal-resume">&times;</button>
+        </div>
+      </div>
+      
+      <div class="modal-body resume-modal-body">
+        <!-- Pixel-Perfect Printable Resume Sheet -->
+        <div class="resume-sheet" id="printable-resume">
+          <!-- Resume Header -->
+          <header class="res-header">
+            <h1 class="res-name">BOGA VIVEK</h1>
+            <div class="res-subtitle">Computer Science Undergraduate (Data Science) • Full-Stack Developer</div>
+            <div class="res-contact-bar">
+              <span><i class="fa-solid fa-phone"></i> +91-8121714172</span>
+              <span><i class="fa-solid fa-envelope"></i> vivekboga2006@gmail.com</span>
+              <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/vivekboga</span>
+              <span><i class="fa-brands fa-github"></i> github.com/VivekBoga09</span>
+            </div>
+          </header>
+
+          <!-- Resume Summary -->
+          <section class="res-section">
+            <h2 class="res-section-title">SUMMARY</h2>
+            <p class="res-text">
+              Computer Science and Engineering (Data Science) undergraduate with strong knowledge of Data Structures, 
+              Algorithms, and Full-Stack Web Development. Proficient in building applications using React.js, Node.js, 
+              Express.js, and MongoDB with hands-on experience through academic projects. Seeking a software development 
+              internship to apply technical and problem-solving skills to real-world applications.
+            </p>
+          </section>
+
+          <!-- Resume Education -->
+          <section class="res-section">
+            <h2 class="res-section-title">EDUCATION</h2>
+            <div class="res-entry">
+              <div class="res-entry-header">
+                <div>
+                  <strong>B.Tech in Computer Science and Engineering (Data Science)</strong><br>
+                  <em>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad</em>
+                </div>
+                <div class="res-entry-right">
+                  <span>2024–2028</span><br>
+                  <strong class="res-badge">CGPA: 9.55 / 10</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="res-entry">
+              <div class="res-entry-header">
+                <div>
+                  <strong>Intermediate (MPC)</strong><br>
+                  <em>Sri Chaitanya College</em>
+                </div>
+                <div class="res-entry-right">
+                  <span>2022–2024</span><br>
+                  <strong class="res-badge">Marks: 983 / 1000</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Resume Projects -->
+          <section class="res-section">
+            <h2 class="res-section-title">PROJECTS</h2>
+
+            <div class="res-entry">
+              <div class="res-entry-header">
+                <div>
+                  <strong>Amazon Price Tracking System with Chrome Extension</strong>
+                  <span class="res-tech-line">| React.js, Node.js, Express.js, MongoDB, Puppeteer, node-cron, Telegram Bot API</span>
+                </div>
+                <div class="res-entry-right">
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+              <ul class="res-bullets">
+                <li>Engineered a full-stack price tracking application using React.js, Node.js, Express.js, and MongoDB to monitor Amazon product price fluctuations.</li>
+                <li>Created a Chrome Extension enabling users to add products directly from Amazon pages and store product data via RESTful APIs.</li>
+                <li>Automated product price monitoring using Puppeteer and node-cron, generating real-time price drop alerts through Telegram Bot API.</li>
+              </ul>
+            </div>
+
+            <div class="res-entry">
+              <div class="res-entry-header">
+                <div>
+                  <strong>Ambulance Priority Traffic Control System</strong>
+                  <span class="res-tech-line">| CSS, React, JavaScript, Express.js, Node.js, MongoDB</span>
+                </div>
+                <div class="res-entry-right">
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+              <ul class="res-bullets">
+                <li>Designed a smart traffic management system that generates automatic green corridors for ambulances during emergency.</li>
+                <li>Constructed RESTful APIs using Node.js and Express.js and integrated MongoDB to manage traffic signal data and ambulance detection requests.</li>
+                <li>Optimized traffic signal prioritization logic to detect approaching ambulances and dynamically adjust signals at congested intersections.</li>
+              </ul>
+            </div>
+
+            <div class="res-entry">
+              <div class="res-entry-header">
+                <div>
+                  <strong>Weather Forecast Web Application</strong>
+                  <span class="res-tech-line">| CSS, React, OpenWeather API, JavaScript</span>
+                </div>
+                <div class="res-entry-right">
+                  <a href="https://github.com/VivekBoga09" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+              <ul class="res-bullets">
+                <li>Created a responsive web application that displays real-time weather conditions and 5-day forecasts using the OpenWeather API.</li>
+                <li>Integrated asynchronous API requests and browser geolocation API to retrieve accurate live weather data based on user location.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Resume Technical Skills -->
+          <section class="res-section">
+            <h2 class="res-section-title">TECHNICAL SKILLS</h2>
+            <div class="res-skills-grid">
+              <div><strong>Programming Languages:</strong> Java, Python, JavaScript, C++, SQL</div>
+              <div><strong>Web Technologies:</strong> HTML, CSS, React.js, Node.js, Express.js</div>
+              <div><strong>Databases:</strong> MySQL, MongoDB</div>
+              <div><strong>Tools:</strong> Git, GitHub, VS Code</div>
+              <div><strong>Other:</strong> Puppeteer, Chrome Extensions, Node-cron, RESTful APIs</div>
+            </div>
+          </section>
+
+          <!-- Resume Achievements & Certifications -->
+          <section class="res-section">
+            <h2 class="res-section-title">ACHIEVEMENTS & CERTIFICATIONS</h2>
+            <ul class="res-bullets">
+              <li><strong>Python Programming — HackerRank:</strong> Certification demonstrating proficiency in Python programming including data structures, functions, and problem-solving.</li>
+              <li><strong>Data Visualization using Tableau — Udemy:</strong> Learned to create interactive dashboards, perform data analysis, and visualize datasets using Tableau.</li>
+              <li><strong>Introduction to Generative AI — IBM:</strong> Gained foundational knowledge of generative AI, large language models, and real-world AI applications.</li>
+            </ul>
+          </section>
+
+          <!-- Resume Coding Profiles -->
+          <section class="res-section">
+            <h2 class="res-section-title">CODING PROFILES</h2>
+            <p class="res-text">
+              <strong>Competitive Programming:</strong> LeetCode (1635 Rating, 150+ DSA Questions Solved), CodeChef (220+ Problems Solved) | Active competitive programmer on Codeforces and HackerRank.
+            </p>
+          </section>
+
+          <!-- Resume Relevant Coursework -->
+          <section class="res-section">
+            <h2 class="res-section-title">RELEVANT COURSEWORK</h2>
+            <p class="res-text">
+              • Data Structures and Algorithms • Database Management Systems • Object Oriented Programming
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="assets/Boga_Vivek_Resume.pdf" download="Boga_Vivek_Resume.pdf" class="btn btn-primary" id="download-res-btn">
+          <i class="fa-solid fa-file-arrow-down"></i> Download Official PDF
+        </a>
+        <button id="print-res-footer-btn" class="btn btn-secondary">
+          <i class="fa-solid fa-print"></i> Print ATS View
+        </button>
+        <button class="btn btn-outline" data-close="modal-resume">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- FLOATING AUTO-SCROLL SHOWCASE TOUR DOCK -->
+  <!-- ============================================== -->
+  <aside class="auto-scroll-dock" id="auto-scroll-dock" aria-label="Auto Scroll Tour">
+    <button
+      type="button"
+      id="auto-scroll-launch-btn"
+      class="auto-scroll-launch-btn"
+      title="Start Hands-Free Showcase Tour (Auto-Scroll)"
+      aria-label="Start Auto-Scroll Tour"
+    >
+      <div class="launch-pulse-ring"></div>
+      <i class="fa-solid fa-play"></i>
+      <span class="launch-text">Auto Tour</span>
+    </button>
+
+    <div id="auto-scroll-active-bar" class="auto-scroll-active-bar" style="display: none;">
+      <div class="auto-scroll-glow"></div>
+      <button type="button" id="autoscroll-toggle-btn" class="autoscroll-btn pause-btn" title="Pause or Resume Auto-Scroll">
+        <i class="fa-solid fa-pause" id="autoscroll-toggle-icon"></i>
+        <span id="autoscroll-toggle-text">Pause</span>
+      </button>
+
+      <button type="button" id="autoscroll-speed-btn" class="autoscroll-btn speed-btn" title="Cycle Auto-Scroll Speed">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span id="autoscroll-speed-text">1.0x</span>
+      </button>
+
+      <div class="autoscroll-progress-badge" title="Page Scrolled">
+        <span class="progress-num" id="autoscroll-progress-text">0%</span>
+      </div>
+
+      <button type="button" id="autoscroll-stop-btn" class="autoscroll-btn stop-btn" title="Exit Auto-Scroll Tour">
+        <i class="fa-solid fa-stop"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>

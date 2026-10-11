@@ -1,0 +1,21 @@
+{
+  "name": "boga-vivek-portfolio-mern",
+  "version": "1.0.0",
+  "description": "Full-Stack MERN Portfolio Application for Boga Vivek",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "mern",
+    "portfolio",
+    "react",
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "author": "Boga Vivek",
+  "license": "MIT"
+}
